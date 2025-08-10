@@ -1,0 +1,215 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: hsl(36, 100%, 99%);
+    width: 100%;
+    height: 100vh;
+    font-family: "Inter";
+}
+
+.container {
+    width: 85%;
+    margin: 0px auto;
+    display: grid;
+    grid-template-columns: repeat(10,auto);
+    grid-template-rows: auto auto 120px;
+    /* grid-template-rows: auto 1fr auto; */
+    grid-template-areas: "head head head head head head head head head head" "section section section section section section section aside aside aside" "foot foot foot foot foot foot foot foot foot foot";
+    gap: 20px;
+}
+
+.container header {
+    grid-area: head;
+    display: grid;
+    grid-template-columns: repeat(10,1fr);
+    grid-template-rows: repeat(1,1fr);
+    grid-template-areas: "logo logo logo logo logo nav nav nav nav nav";
+}
+
+.container header .logo {
+    grid-area: logo;
+    padding-top: 5px;
+}
+
+.container header nav {
+    grid-area: nav;
+    display: flex;
+    justify-content: space-between;
+}
+
+.container header nav a {
+    text-decoration: none;
+    padding: 15px;
+    font-weight: 500;
+    color: hsl(240, 100%, 5%);
+    transition: 0.3s;
+}
+
+.container header nav a:hover {
+    color: hsl(5, 85%, 63%);
+}
+
+/* End of Header */
+
+/* Start Section  */
+
+.container .section {
+    grid-area: section;
+    display: grid;
+    grid-template-columns: repeat(6,1fr);
+    grid-template-rows: repeat(2,auto);
+    grid-template-areas: "img img img img img img" "b-title b-title b-data b-data b-data b-data";
+    gap: 10px;
+}
+
+.container .section .img {
+    grid-area: img;
+}
+
+.container .section .b-title {
+    grid-area: b-title;
+    color: hsl(240, 100%, 5%);
+    font-weight: 700;
+    font-size: 30px;
+    letter-spacing: 1.5px;
+}
+
+.container .section .b-data {
+    grid-area: b-data;
+    font-weight: 500;
+    font-size: 15px;
+    position: relative;
+}
+
+.container .section .b-data button {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 60%;
+    height: 40px;
+    font-size: 15px;
+    font-weight: 700;
+    letter-spacing: 4px;
+    background-color: hsl(5, 85%, 63%);
+    color: white;
+    outline: none;
+    border: none;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.container .section .b-data button:hover {
+    background-color: hsl(240, 100%, 5%);
+}
+
+.container .section .img img {
+    width: 100%;
+    height: 100%;
+}
+
+/* End of Section */
+
+/* Start aside */
+
+.container .aside {
+    grid-area: aside;
+    background-color: hsl(240, 100%, 5%);
+    color: white;
+    padding: 15px;
+}
+
+.container .aside .head-title {
+    font-weight: 800;
+    font-size: 40px;
+    letter-spacing: 1.5px;
+    color: hsl(35, 77%, 62%);
+}
+
+.container .aside .as-1,
+.container .aside .as-2,
+.container .aside .as-3 {
+    border-bottom: 1px solid white;
+}
+
+.container .aside a {
+    display: block;
+    text-decoration: none;
+    color: white;
+    font-weight: 600;
+    font-size: 20px;
+    padding: 15px 0px;
+    transition: 0.3s;
+}
+
+.container .aside a:hover {
+    color: hsl(35, 77%, 62%);
+}
+
+.container .aside p {
+    margin-bottom: 10px;
+}
+
+/* End aside */
+
+/* Start Footer */
+
+.container footer {
+    grid-area: foot;
+    display: flex;
+    justify-content: space-between;
+} 
+
+.container footer .obj {
+    width: calc(97%/3);
+    display: flex;
+}
+
+.container footer .obj .img {
+    height: 100%;
+    width: 30%;
+    margin-right: 10px;
+}
+
+.container footer .obj .img img {
+    width: 100%;
+    height: 100%;
+}
+
+.container footer .obj .part {
+    width: 60%;
+}
+
+.container footer .obj .part .num {
+    width: fit-content;
+    height: fit-content;
+    color: gray;
+    font-size: 30px;
+    padding: 5px;
+    font-weight: 600;
+}
+
+.container footer .obj a {
+    text-decoration: none;
+    color: hsl(240, 100%, 5%);
+    font-weight: 600;
+    width: fit-content;
+    height: fit-content;
+    margin: 5px 0px;
+    transition: 0.3s;
+}
+
+.container footer .obj a:hover {
+    color: hsl(5, 85%, 63%);
+}
+
+.container footer .obj .part div {
+    font-weight: 400;
+    font-size: 15px;
+    margin-top: 5px;
+} 
+
+/* End Footer */
